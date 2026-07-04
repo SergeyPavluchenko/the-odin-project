@@ -52,16 +52,20 @@ body {
 
 
 .picture_p{
-    font-size: 14px;
+    font-size: 12px;
     color: white;
     display: flex;
     justify-content: center;
-    position: relative;
-    bottom: -796px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
 }
 
 span{
     text-decoration: underline;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .picture_logo{
@@ -117,7 +121,54 @@ span{
  
 }
 
-.form-side-body > div{
-display: flex;
-display: grid;
+.field_group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.form-group input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+     width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+}
+
+.form-side-footer{
+    padding: 30px 40px;
+}
+
+.form_btn{
+  background-color: #5e6e52;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+.form-side-footer a{
+    color: #5e6e52;
+    font-weight: bold;
+    text-decoration: none;
 }
