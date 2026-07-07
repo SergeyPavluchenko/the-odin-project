@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List App</title>
+    <link rel="stylesheet" href="./task.css" />
+  </head>
+  <body>
+    <main class="task">
+      <h2 class="task__head">List of tasks</h2>
+      <form class="task__box">
+        <input class="task__input" type="text" placeholder="enter task" />
+        <button class="task__btn__add" type="submit">to add</button>
+      </form>
+      <div class="task__filters">
+        <button class="task__filters__btn" data-filter="all">All</button>
+        <button class="task__filters__btn" data-filter="active">Active</button>
+        <button class="task__filters__btn" data-filter="completed">
+          Completed
+        </button>
+      </div>
+      <p class="empty__message"></p>
+      <ul class="task__ul"></ul>
+    </main>
+    <script src="./task.js"></script>
+  </body>
+</html>
