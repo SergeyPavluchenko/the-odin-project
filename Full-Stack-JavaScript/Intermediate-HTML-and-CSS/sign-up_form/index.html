@@ -11,7 +11,7 @@
       <div class="box">
         <div class="picture">
           <div class="picture_logo">
-            <img class="picture_ing" src="./img/odin-lined.png" alt="odin" />
+            <img class="picture_img" src="./img/odin-lined.png" alt="odin" />
             <p class="picture_odin_p">ODIN</p>
           </div>
           <p class="picture_p">
@@ -26,54 +26,54 @@
 
             <div class="form-side-header">
                 <h2>
-                This is not a real online servise! You know you need something
+                This is not a real online service! You know you need something
                 like this in your life to help you realize your deepest dreams.
-                Sing up
-                <em>now</em> to get started.
+                Sign up <em>now</em> to get started.
                 </h2>
                 <br />
                 <h2>You <em>know</em> you want to</h2>
             </div>
 
-            <form class="form-side-body">
+            <div class="form-side-body">
                 <h2>Let's do this</h2>
                 <br>
 
 
               <div class="field_group">
-                <div class="form-group">
+
+                <form class="form-group" action="">
                     <label for="firstName">FIRST NAME</label>
-                    <input id="firstName" type="firstName" />
-                </div>
+                    <input id="firstName" type="text" required name="firstName" />
+                </form>
 
-                <div class="form-group">
+                <form class="form-group">
                     <label for="lastName">LAST NAME</label>
-                    <input id="lastName" type="lastName" />
-                </div>
+                    <input id="lastName" type="text" name="lastName" />
+                </form>
 
-                <div class="form-group">
+                <form class="form-group">
                     <label for="email">EMAIL</label>
-                    <input id="email" type="email" />
-                </div>
+                    <input id="email" type="text" required name="email" />
+                </form>
 
-                <div class="form-group">
+                <form class="form-group">
                     <label for="phone">PHONE NUMBER</label>
-                    <input id="phone" type="phone" />
-                </div>
+                    <input id="phone" type="text" required name="phone" />
+                </form>
 
-                <div class="form-group">
+                <form class="form-group">
                     <label for="password">PASSWORD</label>
-                    <input id="password" type="password" />
-                </div>
+                    <input id="password" type="text" required name="password" />
+                </form>
 
-                <div class="form-group">
+                <form class="form-group">
                     <label for="confirmPassword">CONFIRM PASSWORD</label>
-                    <input id="confirmPassword" type="confirmPassword" />
-                </div>
+                    <input id="confirmPassword" type="text" required name="confirmPassword" />
+                </form>
               </div>
                
 
-            </form>
+            </div>
 
             <div class="form-side-footer">
                 <button class="form_btn">Create Account</button>
