@@ -1,0 +1,17 @@
+{
+  "name": "dashboard-project",
+  "version": "1.0.0",
+  "description": "This is a practice project from The Odin Project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d . -b gh-pages-dashboard"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
