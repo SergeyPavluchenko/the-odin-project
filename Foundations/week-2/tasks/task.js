@@ -73,9 +73,11 @@ function addTask(value) {
 
 const handleToggle = (e) => {
     if (e.target.tagName === 'LI') {
-
         const id = Number(e.target.dataset.id)
         const task = tasks.find(t => t.id === id)
+
+        if (!task) return;
+
         task.completed = !task.completed
         saveTasks()
         renderTasks()
