@@ -4,9 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/modern-normalize/modern-normalize.css"
+    />
     <title>Library</title>
   </head>
   <body>
+    <!-- header -->
+
+    <main class="library">
+      <header class="header">
+        <h2 class="header__title">My Library</h2>
+        <input type="text" class="header__serch" placeholder="search book..." />
+        <button class="header__clearBtn" type="button">Clear</button>
+        <button id="addBookBtn" class="header__modalBtn" type="button">
+          Add book
+        </button>
+      </header>
+
+      <!-- modal -->
+
+      <dialog class="modal" id="modalAddBook">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <form>
+          <label for="title"
+            ><input id="title" type="text" name="title" />Title</label
+          >
+
+          <label for="author"
+            ><input id="author" type="text" name="author" />Author</label
+          >
+
+          <label for="pages">
+            <input id="pages" type="number" name="pages" /> Pages</label
+          >
+
+          <label for="read">
+            <input type="checkbox" id="read" name="read" />
+            Read?
+          </label>
+
+          <button type="submit">Add book</button>
+        </form>
+      </dialog>
+
+      <!-- books card -->
+
+      <div class="library__block">
+        <ul class="library__list">
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+          <li>
+            <p>Title</p>
+            <p>author</p>
+            <p>pages</p>
+            <p>read</p>
+          </li>
+        </ul>
+      </div>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
