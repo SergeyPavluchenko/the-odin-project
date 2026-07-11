@@ -27,25 +27,46 @@
 
       <dialog class="modal" id="modalAddBook">
         <button class="modal-close" id="modalClose">&times;</button>
-        <form>
-          <label for="title"
-            ><input id="title" type="text" name="title" />Title</label
-          >
-
-          <label for="author"
-            ><input id="author" type="text" name="author" />Author</label
-          >
-
-          <label for="pages">
-            <input id="pages" type="number" name="pages" /> Pages</label
-          >
-
-          <label for="read">
-            <input type="checkbox" id="read" name="read" />
-            Read?
+        <form class="form__book" method="dialog">
+          <label class="form__label" for="title"
+            >Title
+            <input
+              required
+              class="form__input"
+              id="title"
+              type="text"
+              name="title"
+            />
           </label>
 
-          <button type="submit">Add book</button>
+          <label class="form__label" for="author"
+            >Author
+            <input
+              class="form__input"
+              required
+              id="author"
+              type="text"
+              name="author"
+            />
+          </label>
+
+          <label class="form__label" for="pages"
+            >Pages
+            <input
+              class="form__input"
+              required
+              id="pages"
+              type="number"
+              name="pages"
+            />
+          </label>
+
+          <label class="label__read" for="read">
+            Read?
+            <input required type="checkbox" id="read" name="read" />
+          </label>
+
+          <button class="addBtn" type="submit">Add book</button>
         </form>
       </dialog>
 

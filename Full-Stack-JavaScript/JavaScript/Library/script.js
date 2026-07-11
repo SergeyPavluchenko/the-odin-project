@@ -3,27 +3,15 @@ const searchInput = document.querySelector(".header__serch")
 const modalAddBook = document.getElementById("modalAddBook");
 const modalClose = document.getElementById("modalClose");
 const addBookBtn = document.getElementById("addBookBtn");
+const formBook = document.querySelector(".form__book")
+console.log(formBook.value);
 
-addBookBtn.addEventListener("click", () => {
-    modalAddBook.showModal();
-});
 
-modalClose.addEventListener("click", () => {
-    modalAddBook.close();
-});
-
-modalAddBook.addEventListener("click", (event) => {
-    if (event.target === modalAddBook) {
-        modalAddBook.close();
-    }
-});
-
-clearBtn.addEventListener("click", (e) => {
-    searchInput.value = "";
-});
 
 
 const myLibrary = []
+
+
 
 
 function Book(title, author, pages, read) {
@@ -50,14 +38,23 @@ console.log(theHobbit.info());
 
 
 
-document.querySelector(".header__modalBtn").addEventListener("click", () => {
-    dialog.showModal();
+addBookBtn.addEventListener("click", () => {
+    modalAddBook.showModal();
 });
 
-document.querySelector(".closeBtn").addEventListener("click", () => {
-    dialog.close();
+modalClose.addEventListener("click", () => {
+    modalAddBook.close();
 });
 
+modalAddBook.addEventListener("click", (event) => {
+    if (event.target === modalAddBook) {
+        modalAddBook.close();
+    }
+});
+
+clearBtn.addEventListener("click", (e) => {
+    searchInput.value = "";
+});
 
 clearBtn.addEventListener('click', e => {
     searchInput.value = ''
