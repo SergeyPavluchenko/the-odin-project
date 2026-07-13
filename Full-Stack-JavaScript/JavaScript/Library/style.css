@@ -110,7 +110,7 @@ body {
   cursor: pointer;
 }
 
-form {
+.form__book {
   width: 350px;
   display: flex;
   gap: 20px;
@@ -140,6 +140,7 @@ form {
   margin-left: 10px;
 }
 
-/* .addBtn{
-
-} */
+.empty__message {
+  display: flex;
+  justify-content: center;
+}
