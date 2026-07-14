@@ -77,6 +77,7 @@ body {
 }
 
 .library__list li {
+  position: relative;
   background: white;
   padding: 20px;
   border-radius: 12px;
@@ -85,7 +86,31 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  max-width: 366px;
 }
+
+.removeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.list__toggleBtn {
+  position: absolute;
+  right: 15px;
+  top: 70px;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #03730d;
+  color: white;
+  cursor: pointer;
+  border-color: transparent;
+}
+
 .modal {
   border: none;
   border-radius: 10px;
