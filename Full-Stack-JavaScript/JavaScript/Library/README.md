@@ -1,40 +1,26 @@
 # Library
 
-A small library application built as part of The Odin Project.
+A small library application built with JavaScript as part of The Odin Project.
+
+## Live Demo
+
+👉 https://sergeypavluchenko.github.io/the-odin-project/Full-Stack-JavaScript/JavaScript/Library/
 
 ## Features
 
-- Add a new book
-- Delete a book
+- Add new books
+- Delete books
 - Toggle read / not read status
 - Search books by title
-- Save books to localStorage
-- Load books after page refresh
-- Add books through a modal form
+- Data persistence using Local Storage
 
-## Technologies
+## Technologies Used
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
-- localStorage
-- dialog element
+- Local Storage
 
-## What I Practiced
+## Screenshot
 
-- Constructor functions
-- Prototypes
-- DOM manipulation
-- Event listeners
-- Rendering data from an array
-- Saving and loading data with localStorage
-- Working with forms
-- Working with modal dialogs
-
-## What Was Difficult
-
-The most difficult part was keeping the UI synchronized with the array and localStorage.
-
-## What I Want to Improve
-
-I want to improve form validation, code structure, and responsive design.
+![Library Screenshot](./img/screenshot.png)
