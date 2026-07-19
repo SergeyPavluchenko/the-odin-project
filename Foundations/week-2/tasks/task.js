@@ -26,8 +26,7 @@ function renderTasks() {
             li.classList.add('task__ul__chaked')
         }
         let span = document.createElement('span')
-        span.textContent = '\u00d7'
-        li.appendChild(span)
+
         taskList.appendChild(li)
 
     })
