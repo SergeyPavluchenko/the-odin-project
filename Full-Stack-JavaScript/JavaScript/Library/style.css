@@ -27,7 +27,7 @@ body {
   padding: 10px 0;
 }
 
-.header__serch {
+.header__search {
   width: 300px;
   height: 25px;
   border-color: transparent;
@@ -37,7 +37,7 @@ body {
   outline: none;
 }
 
-.header__serch:focus {
+.header__search:focus {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

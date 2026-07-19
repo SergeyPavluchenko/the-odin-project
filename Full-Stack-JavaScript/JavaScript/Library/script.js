@@ -1,12 +1,12 @@
 const clearBtn = document.querySelector(".header__clearBtn")
-const searchInput = document.querySelector(".header__serch")
+const searchInput = document.querySelector(".header__search")
 const modalAddBook = document.getElementById("modalAddBook");
 const modalClose = document.getElementById("modalClose");
 const addBookBtn = document.getElementById("addBookBtn");
 const formBook = document.querySelector("form")
 const bookList = document.querySelector('.library__list')
 const message = document.querySelector('.empty__message')
-const search = document.querySelector('.header__serch')
+const search = document.querySelector('.header__search')
 
 
 const myLibrary = []
