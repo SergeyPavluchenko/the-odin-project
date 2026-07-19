@@ -13,11 +13,17 @@ const myLibrary = []
 
 function renderBook() {
     bookList.innerHTML = ''
+
+    const books = filterBooks();
+
     if (myLibrary.length === 0) {
-        message.textContent = 'No books yet'
+        message.textContent = 'No books yet';
+    } else if (books.length === 0) {
+        message.textContent = 'No books found.';
     } else {
-        message.textContent = ''
+        message.textContent = '';
     }
+
 
 
     filterBooks().forEach(book => {
@@ -51,6 +57,10 @@ function filterBooks() {
 
 const handleDelete = (id) => {
     const idx = myLibrary.findIndex(book => book.id === id)
+    if (idx === -1) {
+        return
+    }
+
     myLibrary.splice(idx, 1)
     saveBook()
     renderBook()
@@ -58,6 +68,11 @@ const handleDelete = (id) => {
 
 const handleToggle = id => {
     const toggle = myLibrary.find(book => book.id === id)
+
+    if (!toggle) {
+        return
+    }
+
     toggle.toggleRead()
     saveBook()
     renderBook()
@@ -69,8 +84,14 @@ modalAddBook.addEventListener('submit', (e) => {
     e.preventDefault()
     const title = e.target.elements.title.value.trim();
     const author = e.target.elements.author.value.trim();
-    const pages = e.target.elements.pages.value.trim();
+    const pages = Number(e.target.elements.pages.value.trim());
     const read = e.target.elements.read.checked;
+
+    if (!title || !author || pages <= 0) {
+        alert("Please fill in all fields correctly.");
+        return;
+    }
+
     const id = crypto.randomUUID()
 
     const addBook = new Book(title, author, pages, read, id)
@@ -78,6 +99,7 @@ modalAddBook.addEventListener('submit', (e) => {
     saveBook()
     formBook.reset()
     renderBook()
+    modalAddBook.close();
 })
 
 

@@ -1,16 +1,16 @@
 {
   "name": "library",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library project from The Odin Project",
   "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "javascript",
+    "library",
+    "the-odin-project",
+    "localstorage",
+    "dom"
+  ],
+  "author": "Serhii Pavliuchenko",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "modern-normalize": "^3.0.1"
-  }
+  "type": "commonjs"
 }
