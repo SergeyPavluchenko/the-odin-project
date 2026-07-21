@@ -12,5 +12,8 @@
   ],
   "author": "Serhii Pavliuchenko",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "prettier": "^3.9.6"
+  }
 }

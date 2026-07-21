@@ -23,4 +23,28 @@ A small library application built with JavaScript as part of The Odin Project.
 
 ## Screenshot
 
-![Library Screenshot](./img/screenshot.png)
+![Library Screenshot](./img/Library%20-%20Google%20Chrome.jpg)
+
+## What I Practiced
+
+During this project, I practiced:
+
+- Constructor functions
+- Prototype methods
+- DOM manipulation
+- Event listeners
+- Rendering data from an array
+- Form validation
+- Using the HTML `<dialog>` element
+- Working with `localStorage`
+
+## What Was Difficult
+
+The most difficult part was keeping the application state synchronized between the `myLibrary` array, the UI, and `localStorage`. I also refactored the code to make it cleaner and easier to maintain.
+
+## Future Improvements
+
+- Edit existing book information
+- Sort books by title, author, or read status
+- Improve the responsive design
+- Add better form validation and error messages
