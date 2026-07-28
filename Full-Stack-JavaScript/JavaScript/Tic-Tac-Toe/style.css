@@ -1,0 +1,21 @@
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.table td {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+
+.startBtn {
+  background-color: sienna;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-top: 30px;
+}
