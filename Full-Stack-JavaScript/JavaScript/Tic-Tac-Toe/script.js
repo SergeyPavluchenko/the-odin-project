@@ -1,9 +1,8 @@
-// const board = document.querySelector('.table')
 const board = document.querySelector(".board");
 const win = document.querySelector(".winner");
 const startBtn = document.querySelector(".startBtn");
-const box = document.querySelector(".box")
-const click = document.querySelector(".click")
+const box = document.querySelector(".box");
+const click = document.querySelector(".click");
 
 let player = "X";
 let counterX = [];
@@ -25,26 +24,28 @@ function hasWinningCombination(arr, move) {
     return arr.every((index) => move.includes(index));
 }
 
-for (let i = 0; i < 9; i++) {
-    const cell = document.createElement("div");
-    cell.classList.add("cell");
-    cell.dataset.index = i;
-    board.appendChild(cell);
+function createBoard() {
+    for (let i = 0; i < 9; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        cell.dataset.index = i;
+        board.appendChild(cell);
+    }
 }
 
+createBoard();
 
 function handleClick(e) {
-
     if (gameOver) {
         return;
     }
 
     if (!e.target.classList.contains("cell")) {
-        click.textContent = "Click on the board!"
-        return
+        click.textContent = "Click on the board!";
+        return;
     }
 
-    click.textContent = ""
+    click.textContent = "";
 
     const idx = Number(e.target.dataset.index);
 
@@ -57,33 +58,34 @@ function handleClick(e) {
     if (player === "X") {
         player = "O";
         counterX.push(idx);
-        const winnerX = winComb.some((comb) => hasWinningCombination(comb, counterX));
+        const winnerX = winComb.some((comb) =>
+            hasWinningCombination(comb, counterX),
+        );
         if (winnerX === true) {
             gameOver = true;
             win.textContent = "Player X wins!";
-            click.textContent = ""
+            click.textContent = "";
             return;
         }
     } else {
         player = "X";
         counterO.push(idx);
-        const winnerO = winComb.some((comb) => hasWinningCombination(comb, counterO));
+        const winnerO = winComb.some((comb) =>
+            hasWinningCombination(comb, counterO),
+        );
         if (winnerO === true) {
             gameOver = true;
             win.textContent = "Player O wins!";
-            click.textContent = ""
+            click.textContent = "";
             return;
         }
     }
-
 
     const total = counterX.length + counterO.length;
     if (total === 9) {
         win.textContent = "Draw!";
         gameOver = true;
     }
-
-
 }
 
 function handleStart() {
