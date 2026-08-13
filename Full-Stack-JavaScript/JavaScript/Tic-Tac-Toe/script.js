@@ -38,6 +38,7 @@ function createBoard() {
 createBoard();
 
 function handleClick(e) {
+
     click.textContent = "";
 
 
