@@ -25,6 +25,8 @@ function hasWinningCombination(arr, move) {
 }
 
 function createBoard() {
+    board.innerHTML = "";
+
     for (let i = 0; i < 9; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
@@ -36,6 +38,9 @@ function createBoard() {
 createBoard();
 
 function handleClick(e) {
+    click.textContent = "";
+
+
     if (gameOver) {
         return;
     }
@@ -45,7 +50,6 @@ function handleClick(e) {
         return;
     }
 
-    click.textContent = "";
 
     const idx = Number(e.target.dataset.index);
 
@@ -56,7 +60,6 @@ function handleClick(e) {
     e.target.textContent = player;
 
     if (player === "X") {
-        player = "O";
         counterX.push(idx);
         const winnerX = winComb.some((comb) =>
             hasWinningCombination(comb, counterX),
@@ -64,21 +67,22 @@ function handleClick(e) {
         if (winnerX === true) {
             gameOver = true;
             win.textContent = "Player X wins!";
-            click.textContent = "";
             return;
         }
+
+        player = "O";
+
     } else {
-        player = "X";
         counterO.push(idx);
         const winnerO = winComb.some((comb) =>
             hasWinningCombination(comb, counterO),
         );
-        if (winnerO === true) {
+        if (winnerO) {
             gameOver = true;
             win.textContent = "Player O wins!";
-            click.textContent = "";
             return;
         }
+        player = "X";
     }
 
     const total = counterX.length + counterO.length;
@@ -88,7 +92,9 @@ function handleClick(e) {
     }
 }
 
-function handleStart() {
+function handleStart(e) {
+    e.stopPropagation()
+
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.textContent = "";
@@ -99,6 +105,7 @@ function handleStart() {
     counterO = [];
     gameOver = false;
     win.textContent = "";
+    click.textContent = "";
 }
 
 box.addEventListener("click", handleClick);
