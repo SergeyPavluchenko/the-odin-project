@@ -33,7 +33,7 @@ function renderBook() {
         toggleBtn.classList.add("list__toggleBtn");
         button.classList.add("removeBtn");
 
-        toggleBtn.textContent = book.read ? 'Not read' : 'Read'
+        toggleBtn.textContent = book.read ? "Mark as not read" : "Mark as read";
         button.textContent = "\u00d7";
         title.textContent = book.title;
         author.textContent = book.author;
@@ -43,7 +43,6 @@ function renderBook() {
         toggleBtn.addEventListener("click", (e) => handleToggle(book.id));
         bookList.append(li);
         li.append(button, title, author, pages, read, toggleBtn);
-        console.log(toggleBtn);
     });
 }
 
@@ -119,11 +118,11 @@ function loadBooks() {
 }
 
 function Book(title, author, pages, read, id) {
-    ((this.title = title),
+    (this.title = title),
         (this.author = author),
         (this.pages = pages),
         (this.read = read),
-        (this.id = id));
+        (this.id = id);
 
     this.info = function () {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read"}`;
