@@ -24,11 +24,8 @@ contactBtn.textContent = "Contacts";
 contactBtn.classList.add("contactBtn");
 
 
-header.appendChild(logo)
-header.appendChild(navigation)
+header.append(logo, navigation)
 
-navigation.appendChild(homeBtn)
-navigation.appendChild(aboutBtn)
-navigation.appendChild(contactBtn)
+navigation.append(homeBtn, aboutBtn, contactBtn)
 
-export default header
+export { header, homeBtn, aboutBtn, contactBtn }
