@@ -1,15 +1,14 @@
-import logoImg from '../img/la_tavola_logo_horizontal.svg'
+import logoImg from "../img/la_tavola_logo_horizontal.svg";
 
-
-const header = document.createElement('div')
-header.classList.add("header")
+const header = document.createElement("div");
+header.classList.add("header");
 
 const navigation = document.createElement("nav");
 
-const logo = document.createElement("img")
-logo.src = logoImg
-logo.alt = 'La Tavola'
-
+const logo = document.createElement("img");
+logo.classList.add("logo");
+logo.src = logoImg;
+logo.alt = "La Tavola";
 
 const homeBtn = document.createElement("button");
 homeBtn.textContent = "Home";
@@ -23,9 +22,8 @@ const contactBtn = document.createElement("button");
 contactBtn.textContent = "Contacts";
 contactBtn.classList.add("contactBtn");
 
+header.append(logo, navigation);
 
-header.append(logo, navigation)
+navigation.append(homeBtn, aboutBtn, contactBtn);
 
-navigation.append(homeBtn, aboutBtn, contactBtn)
-
-export { header, homeBtn, aboutBtn, contactBtn }
+export { header, homeBtn, aboutBtn, contactBtn };
