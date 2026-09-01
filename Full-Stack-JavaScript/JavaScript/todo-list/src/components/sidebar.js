@@ -15,7 +15,7 @@ function sidebarMarking() {
 
     sidebarBox.append(allBtn, todayBtn, importantBtn)
 
-    return sidebarBox
+    return { sidebarBox, allBtn, todayBtn, importantBtn }
 
 }
 
