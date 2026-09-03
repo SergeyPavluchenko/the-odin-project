@@ -1,10 +1,16 @@
 class Todo {
-    constructor(title, dueDate) {
+    constructor(
+        title,
+        dueDate = null,
+        important = false,
+        id = crypto.randomUUID(),
+        completed = false,
+    ) {
         this.title = title;
         this.dueDate = dueDate;
-        this.important = false;
-        this.id = crypto.randomUUID();
-        this.completed = false;
+        this.important = important;
+        this.id = id;
+        this.completed = completed;
     }
 }
 

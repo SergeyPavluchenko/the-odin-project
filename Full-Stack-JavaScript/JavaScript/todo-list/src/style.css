@@ -1,0 +1,29 @@
+.important-btn {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.important-btn:hover {
+  color: #777;
+}
+
+.important-btn.important {
+  color: gold;
+}
+
+.delite-btn {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #778bec;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.delite-btn:hover {
+  transform: scale(1.2);
+}
