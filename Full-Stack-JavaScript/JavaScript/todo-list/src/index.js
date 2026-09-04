@@ -14,6 +14,9 @@ import { saveProject } from "./logic/todoLogic.js";
 
 const project = loadProject();
 
+const container = document.createElement('div')
+container.classList.add('container')
+
 const todoBox = document.createElement("div");
 
 const { sidebarBox, allBtn, todayBtn, importantBtn } = sidebarMarking();
@@ -96,7 +99,9 @@ function onDelite(todo) {
     );
 }
 
-document.body.append(sidebarBox, formBox, todoBox);
+
+document.body.append(container);
+container.append(sidebarBox, formBox, todoBox);
 
 todoBox.append(
     renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),

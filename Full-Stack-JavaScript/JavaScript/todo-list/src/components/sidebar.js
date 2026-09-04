@@ -1,5 +1,6 @@
 function sidebarMarking() {
     const sidebarBox = document.createElement('div');
+    sidebarBox.classList.add('sidebarBox')
 
     const allBtn = document.createElement('button')
     allBtn.textContent = 'All todos'
