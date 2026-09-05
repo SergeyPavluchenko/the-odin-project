@@ -18,6 +18,7 @@ const container = document.createElement('div')
 container.classList.add('container')
 
 const todoBox = document.createElement("div");
+todoBox.classList.add('todoBox')
 
 const { sidebarBox, allBtn, todayBtn, importantBtn } = sidebarMarking();
 const { formBox, titleInput, inputBtn, inputDate } = AddTask();
