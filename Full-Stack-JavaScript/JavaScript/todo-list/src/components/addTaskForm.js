@@ -7,6 +7,7 @@ function AddTask() {
 
     const titleInput = document.createElement('input')
     titleInput.classList.add('titleInput')
+    titleInput.placeholder = 'Add a new task...'
 
     const inputDate = document.createElement('input')
     inputDate.classList.add('inputDate')

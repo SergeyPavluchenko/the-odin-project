@@ -1,5 +1,4 @@
 import "../src/style.css";
-import { Project } from "./classes/Project.js";
 import { Todo } from "./classes/Todo.js";
 import { renderTodoLIst } from "./components/todoList.js";
 import { sidebarMarking } from "./components/sidebar.js";
@@ -23,6 +22,29 @@ todoBox.classList.add('todoBox')
 const { sidebarBox, allBtn, todayBtn, importantBtn } = sidebarMarking();
 const { formBox, titleInput, inputBtn, inputDate } = AddTask();
 
+let currentView = 'all'
+
+function renderCurrentView() {
+    todoBox.innerHTML = ''
+
+    let todos = project.todos
+
+    if (currentView === 'important') {
+        todos = getImportantTodos(project.todos)
+    }
+    if (currentView === 'today') {
+        todos = getTotayTodos(project.todos)
+    }
+
+    todoBox.append(
+        renderTodoLIst(
+            todos,
+            toggleCompleted,
+            toggleImportant,
+            onDelete
+        ))
+}
+
 inputBtn.addEventListener("click", () => {
     const inputText = titleInput.value;
 
@@ -34,76 +56,56 @@ inputBtn.addEventListener("click", () => {
     project.addTodo(new Todo(inputText, inputDate.value));
     saveProject(project);
 
-    todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),
-    );
     titleInput.value = "";
-    inputDate.value = "";
+    renderCurrentView()
 });
 
 importantBtn.addEventListener("click", () => {
-    todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(
-            getImportantTodos(project.todos),
-            toggleCompleted,
-            toggleImportant,
-            onDelite,
-        ),
-    );
+    currentView = 'important'
+    renderCurrentView()
+
 });
 
 todayBtn.addEventListener("click", () => {
-    todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(
-            getTotayTodos(project.todos),
-            toggleCompleted,
-            toggleImportant,
-            onDelite,
-        ),
-    );
+    currentView = 'today'
+    renderCurrentView()
 });
 
 allBtn.addEventListener("click", () => {
-    todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),
-    );
+    currentView = 'all'
+    renderCurrentView()
 });
 
 function toggleCompleted(todo) {
     todo.completed = !todo.completed;
     saveProject(project);
     todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),
-    );
+    renderCurrentView()
 }
 
 function toggleImportant(todo) {
     todo.important = !todo.important;
     saveProject(project);
     todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),
-    );
+    renderCurrentView()
 }
 
-function onDelite(todo) {
+function onDelete(todo) {
     project.removeTodo(todo.id);
     saveProject(project);
     todoBox.innerHTML = "";
     todoBox.append(
-        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),
+        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelete),
     );
 }
 
 
-document.body.append(container);
 container.append(sidebarBox, formBox, todoBox);
+document.body.append(container);
 
 todoBox.append(
-    renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelite),
+    renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelete),
 );
+
+renderCurrentView()
+

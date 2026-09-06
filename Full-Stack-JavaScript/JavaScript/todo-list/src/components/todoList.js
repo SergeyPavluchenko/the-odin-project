@@ -1,4 +1,4 @@
-function renderTodoLIst(todos, toggleCompleted, toggleImportant, onDelite) {
+function renderTodoLIst(todos, toggleCompleted, toggleImportant, onDelete) {
 
     const list = document.createElement('ul')
     list.classList.add('list')
@@ -6,6 +6,10 @@ function renderTodoLIst(todos, toggleCompleted, toggleImportant, onDelite) {
     todos.forEach(todo => {
         const item = document.createElement('li')
         item.classList.add('item')
+
+        if (todo.completed) {
+            item.classList.add('completed');
+        }
 
         const input = document.createElement('input')
         input.type = 'checkbox'
@@ -28,20 +32,20 @@ function renderTodoLIst(todos, toggleCompleted, toggleImportant, onDelite) {
             toggleImportant(todo)
         });
 
-        const deliteBtn = document.createElement('button')
+        const deleteBtn = document.createElement('button')
 
-        deliteBtn.textContent = '🗑';
-        deliteBtn.classList.add('delite-btn');
+        deleteBtn.textContent = '🗑';
+        deleteBtn.classList.add('delete-btn');
 
-        deliteBtn.addEventListener('click', () => {
-            onDelite(todo)
+        deleteBtn.addEventListener('click', () => {
+            onDelete(todo)
         });
 
 
         const title = document.createElement('span')
         title.textContent = todo.title
 
-        item.append(input, title, importantBtn, deliteBtn)
+        item.append(input, title, importantBtn, deleteBtn)
         list.append(item)
     });
 

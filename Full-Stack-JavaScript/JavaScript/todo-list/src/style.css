@@ -54,17 +54,15 @@ body {
 }
 
 .sidebarBox button:hover {
-  background-color: #0aab35;
+  background-color: #079b30;
   color: white;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
-
 .formBox {
   grid-column: 2;
   grid-row: 1;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -89,23 +87,31 @@ body {
 }
 
 .inputBox button:hover,
-inputDate:hover {
-  transform: scale(1.1);
-  background-color: #0aab35;
+.inputDate:hover {
+  transform: scale(1.08);
+  background-color: #079b30;
   color: white;
-  transform: scale(1.1);
+}
+
+.inputDate:focus {
+  outline: none;
 }
 
 .titleInput {
   width: 400px;
   height: 40px;
-  background-color: #cccccc;
+  background-color: #eeeeee;
   border: none;
-  color: #333333;
+  color: #333;
   padding: 10px 15px;
   border-radius: 20px;
   outline: none;
-  margin: 20 20 20 0;
+  margin: 20px 20px 20px 0;
+  font-family: inherit;
+}
+
+.titleInput:focus {
+  background-color: #e5e5e5;
 }
 
 .important-btn {
@@ -130,7 +136,7 @@ inputDate:hover {
   color: #f2c94c;
 }
 
-.delite-btn {
+.delete-btn {
   border: none;
   background: none;
   font-size: 18px;
@@ -142,36 +148,41 @@ inputDate:hover {
     color 0.2s ease;
 }
 
-.delite-btn:hover {
+.delete-btn:hover {
   transform: scale(1.2);
   color: #e74c3c;
 }
 
 .todoBox {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.list {
   list-style: none;
   padding: 25px 35px;
-  margin: 0;
-  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
 }
+
 .item {
   display: flex;
   align-items: center;
   gap: 12px;
-
   min-height: 52px;
   margin-bottom: 12px;
   padding: 10px 15px;
-
   background: #f7f7f7;
   border: 1px solid #e5e5e5;
   border-radius: 12px;
-
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .item:hover {
@@ -189,11 +200,13 @@ inputDate:hover {
 
 .item span {
   flex: 1;
-
   font-size: 16px;
   font-weight: 500;
   color: #333;
-
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.item.completed {
+  opacity: 0.5;
 }
