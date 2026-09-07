@@ -1,14 +1,21 @@
 {
   "name": "restaurant-menu",
   "version": "1.0.0",
-  "description": "",
+  "description": "Restaurant page project from The Odin Project built with Webpack and JavaScript modules",
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack serve --open"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "javascript",
+    "webpack",
+    "the-odin-project",
+    "restaurant-page",
+    "dom"
+  ],
+  "author": "Serhii Pavliuchenko",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^7.1.4",

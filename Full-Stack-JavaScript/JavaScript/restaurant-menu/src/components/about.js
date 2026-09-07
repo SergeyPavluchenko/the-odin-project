@@ -4,6 +4,7 @@ about.classList.add("about");
 const aboutCloseBtn = document.createElement("button");
 aboutCloseBtn.classList.add("aboutCloseBtn");
 aboutCloseBtn.textContent = "×";
+aboutCloseBtn.type = "button";
 
 const title = document.createElement("h2");
 title.textContent = "About La Tavola";

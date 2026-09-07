@@ -12,18 +12,22 @@ logo.alt = "La Tavola";
 
 const homeBtn = document.createElement("button");
 homeBtn.textContent = "Home";
-homeBtn.classList.add("homeBtn");
+homeBtn.classList.add("nav__button", "homeBtn");
+
+const menuBtn = document.createElement("button");
+menuBtn.textContent = "Menu";
+menuBtn.classList.add("nav__button", "menuBtn");
 
 const aboutBtn = document.createElement("button");
 aboutBtn.textContent = "About";
-aboutBtn.classList.add("aboutBtn");
+aboutBtn.classList.add("nav__button", "aboutBtn");
 
 const contactBtn = document.createElement("button");
 contactBtn.textContent = "Contacts";
-contactBtn.classList.add("contactBtn");
+contactBtn.classList.add("nav__button", "contactBtn");
 
 header.append(logo, navigation);
 
-navigation.append(homeBtn, aboutBtn, contactBtn);
+navigation.append(homeBtn, menuBtn, aboutBtn, contactBtn);
 
-export { header, homeBtn, aboutBtn, contactBtn };
+export { header, homeBtn, menuBtn, aboutBtn, contactBtn };

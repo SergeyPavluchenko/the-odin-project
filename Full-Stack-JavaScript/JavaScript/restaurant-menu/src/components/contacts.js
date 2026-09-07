@@ -4,6 +4,7 @@ contacts.classList.add("contacts");
 const contactsCloseBtn = document.createElement("button");
 contactsCloseBtn.classList.add("contactsCloseBtn");
 contactsCloseBtn.textContent = "×";
+contactsCloseBtn.type = "button";
 
 const contactText = document.createElement("h2");
 contactText.textContent = "Contact us";

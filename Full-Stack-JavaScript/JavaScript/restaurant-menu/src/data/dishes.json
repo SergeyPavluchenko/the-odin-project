@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Margherita Pizza",
+    "description": "Classic pizza with tomato sauce, mozzarella and basil.",
+    "price": "$9"
+  },
+  {
+    "name": "Pasta Carbonara",
+    "description": "Pasta with creamy sauce, pancetta and parmesan.",
+    "price": "$11"
+  },
+  {
+    "name": "Tiramisu",
+    "description": "Traditional Italian dessert with coffee and mascarpone.",
+    "price": "$6"
+  },
+  {
+    "name": "Lasagna alla Bolognese",
+    "description": "Layered pasta with rich meat sauce, béchamel and parmesan.",
+    "price": "$13"
+  },
+  {
+    "name": "Bruschetta al Pomodoro",
+    "description": "Toasted bread topped with fresh tomatoes, garlic and basil.",
+    "price": "$7"
+  },
+  {
+    "name": "Risotto ai Funghi",
+    "description": "Creamy risotto with mixed mushrooms and parmesan.",
+    "price": "$12"
+  },
+  {
+    "name": "Spaghetti alle Vongole",
+    "description": "Spaghetti with clams, garlic, white wine and parsley.",
+    "price": "$14"
+  },
+  {
+    "name": "Caprese Salad",
+    "description": "Fresh mozzarella, tomatoes and basil with olive oil.",
+    "price": "$8"
+  },
+  {
+    "name": "Osso Buco",
+    "description": "Braised veal shanks with vegetables, white wine and broth.",
+    "price": "$18"
+  },
+  {
+    "name": "Panna Cotta",
+    "description": "Silky vanilla cream dessert topped with berry sauce.",
+    "price": "$6"
+  }
+]
