@@ -1,18 +1,3 @@
-@media (max-width: 768px) {
-  nav {
-    gap: 10px;
-    padding-right: 20px;
-  }
-
-  .menu {
-    padding: 35px 25px;
-  }
-
-  .list {
-    grid-template-columns: 1fr;
-  }
-}
-
 html,
 body {
   margin: 0;
@@ -245,4 +230,19 @@ nav button:hover {
 
 .nav__button.active {
   color: green;
+}
+
+@media (max-width: 768px) {
+  nav {
+    gap: 10px;
+    padding-right: 20px;
+  }
+
+  .menu {
+    padding: 35px 25px;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+  }
 }

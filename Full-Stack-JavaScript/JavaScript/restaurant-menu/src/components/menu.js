@@ -30,7 +30,6 @@ dishes.forEach((dish) => {
 
     cardList.append(name, description, price);
     list.appendChild(cardList);
-    console.log(cardList);
 });
 
 menu.append(menuCloseBtn, title, list);
