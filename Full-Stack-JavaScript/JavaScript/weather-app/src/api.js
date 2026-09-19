@@ -1,8 +1,8 @@
 const API_KEY = 'ZLXW8S7FP8DX6Q8R7RGA6CXA3'
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
 
-async function getWeather(city) {
-    const url = `${BASE_URL}${city}?key=${API_KEY}`
+async function getWeather(city, unit) {
+    const url = `${BASE_URL}${city}?key=${API_KEY}&unitGroup=${unit}`
     const response = await fetch(url)
     const data = await response.json()
     const weatherData = {
@@ -12,6 +12,7 @@ async function getWeather(city) {
         humidity: data.currentConditions.humidity,
         conditions: data.currentConditions.conditions
     }
+    console.log(data);
     return weatherData
 }
 
