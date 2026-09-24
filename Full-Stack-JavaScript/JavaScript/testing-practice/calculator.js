@@ -30,4 +30,16 @@ function getUserName1(user) {
     return user.name;
 }
 
-module.exports = { subtract, createUser, getFruits, getUserName, isEmpty, findUser, getUserName1 }
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error('Не можна ділити на нуль');
+    }
+
+    return a / b;
+}
+
+function isAdult(age) {
+    return age >= 18
+}
+
+module.exports = { isAdult, divide, subtract, createUser, getFruits, getUserName, isEmpty, findUser, getUserName1 }
