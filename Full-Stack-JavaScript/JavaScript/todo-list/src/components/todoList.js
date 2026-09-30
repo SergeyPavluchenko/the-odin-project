@@ -1,4 +1,4 @@
-function renderTodoLIst(todos, toggleCompleted, toggleImportant, onDelete) {
+function renderTodoList(todos, toggleCompleted, toggleImportant, onDelete) {
 
     const list = document.createElement('ul')
     list.classList.add('list')
@@ -52,4 +52,4 @@ function renderTodoLIst(todos, toggleCompleted, toggleImportant, onDelete) {
     return list
 }
 
-export { renderTodoLIst }
+export { renderTodoList }

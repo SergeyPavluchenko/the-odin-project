@@ -2,6 +2,10 @@ function sidebarMarking() {
     const sidebarBox = document.createElement('div');
     sidebarBox.classList.add('sidebarBox')
 
+    const completedBtn = document.createElement('button')
+    completedBtn.textContent = 'Completed'
+    completedBtn.classList.add('completedBtn')
+
     const header = document.createElement('h1')
     header.textContent = 'Task list'
 
@@ -17,10 +21,8 @@ function sidebarMarking() {
     importantBtn.textContent = 'Important'
     importantBtn.classList.add('importantBtn')
 
-    sidebarBox.append(header, allBtn, todayBtn, importantBtn)
-
-    return { sidebarBox, allBtn, todayBtn, importantBtn }
-
+    sidebarBox.append(header, allBtn, todayBtn, importantBtn, completedBtn)
+    return { sidebarBox, allBtn, todayBtn, importantBtn, completedBtn }
 }
 
 export { sidebarMarking }

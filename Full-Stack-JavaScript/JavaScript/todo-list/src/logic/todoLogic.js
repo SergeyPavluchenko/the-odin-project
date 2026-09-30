@@ -10,7 +10,7 @@ function getCompletedTodos(todos) {
     return todos.filter((todo) => todo.completed);
 }
 
-function getTotayTodos(todos) {
+function getTodayTodos(todos) {
     const now = new Date()
     const year = now.getFullYear()
     const month = String(now.getMonth() + 1).padStart(2, "0")
@@ -42,7 +42,7 @@ function loadProject(project) {
 export {
     getImportantTodos,
     getCompletedTodos,
-    getTotayTodos,
+    getTodayTodos,
     saveProject,
     loadProject,
 };

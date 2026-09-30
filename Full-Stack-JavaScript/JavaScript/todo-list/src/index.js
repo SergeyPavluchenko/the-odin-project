@@ -1,11 +1,11 @@
 import "../src/style.css";
 import { Todo } from "./classes/Todo.js";
-import { renderTodoLIst } from "./components/todoList.js";
+import { renderTodoList } from "./components/todoList.js";
 import { sidebarMarking } from "./components/sidebar.js";
 import {
     getImportantTodos,
     getCompletedTodos,
-    getTotayTodos,
+    getTodayTodos,
     loadProject,
 } from "./logic/todoLogic.js";
 import { AddTask } from "./components/addTaskForm.js";
@@ -19,7 +19,7 @@ container.classList.add('container')
 const todoBox = document.createElement("div");
 todoBox.classList.add('todoBox')
 
-const { sidebarBox, allBtn, todayBtn, importantBtn } = sidebarMarking();
+const { sidebarBox, allBtn, todayBtn, importantBtn, completedBtn } = sidebarMarking();
 const { formBox, titleInput, inputBtn, inputDate } = AddTask();
 
 let currentView = 'all'
@@ -33,11 +33,14 @@ function renderCurrentView() {
         todos = getImportantTodos(project.todos)
     }
     if (currentView === 'today') {
-        todos = getTotayTodos(project.todos)
+        todos = getTodayTodos(project.todos)
+    }
+    if (currentView === 'completed') {
+        todos = getCompletedTodos(project.todos)
     }
 
     todoBox.append(
-        renderTodoLIst(
+        renderTodoList(
             todos,
             toggleCompleted,
             toggleImportant,
@@ -71,6 +74,11 @@ todayBtn.addEventListener("click", () => {
     renderCurrentView()
 });
 
+completedBtn.addEventListener("click", () => {
+    currentView = 'completed'
+    renderCurrentView()
+});
+
 allBtn.addEventListener("click", () => {
     currentView = 'all'
     renderCurrentView()
@@ -93,10 +101,7 @@ function toggleImportant(todo) {
 function onDelete(todo) {
     project.removeTodo(todo.id);
     saveProject(project);
-    todoBox.innerHTML = "";
-    todoBox.append(
-        renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelete),
-    );
+    renderCurrentView()
 }
 
 
@@ -104,7 +109,7 @@ container.append(sidebarBox, formBox, todoBox);
 document.body.append(container);
 
 todoBox.append(
-    renderTodoLIst(project.todos, toggleCompleted, toggleImportant, onDelete),
+    renderTodoList(project.todos, toggleCompleted, toggleImportant, onDelete),
 );
 
 renderCurrentView()
