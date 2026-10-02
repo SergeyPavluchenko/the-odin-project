@@ -1,1 +1,8 @@
-{}
+{
+  "name": "the-odin-project-practice",
+  "version": "1.0.0",
+  "description": "Practice projects completed while studying The Odin Project",
+  "private": true,
+  "author": "Serhii Pavliuchenko",
+  "license": "ISC"
+}
