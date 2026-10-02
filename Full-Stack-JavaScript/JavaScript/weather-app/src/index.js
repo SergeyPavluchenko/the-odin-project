@@ -42,7 +42,7 @@ async function searchWeather(city, unit) {
         const weatherData = await getWeather(city, unit);
         return weatherData;
     } catch (error) {
-        console.log(error);
+        throw error
     }
 }
 
@@ -90,7 +90,7 @@ function displayWeather(searchData) {
 
     const weatherIcon = document.createElement('div')
     weatherIcon.classList.add('weatherIcon')
-    weatherIcon.textContent = weatherIcons[icon]
+    weatherIcon.textContent = weatherIcons[icon] || "🌤️";
 
     main.append(
         cityTitle,
@@ -109,18 +109,26 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
-    const searchData = await searchWeather(input.value, currentUnit);
+    main.textContent = "Loading...";
 
-    if (!searchData) {
-        main.textContent = "City not found";
-        return;
+    try {
+        const searchData = await searchWeather(input.value, currentUnit);
+
+        if (!searchData) {
+            main.textContent = "City not found";
+            return;
+        }
+
+        currentCity = input.value;
+
+        displayWeather(searchData);
+
+        input.value = "";
+
+    } catch (error) {
+        main.textContent = 'Unable to load weather data. Please try again.'
     }
 
-    currentCity = input.value;
-
-    displayWeather(searchData);
-
-    input.value = "";
 });
 
 celsiusBtn.addEventListener("click", async () => {

@@ -1,4 +1,4 @@
-const API_KEY = 'ZLXW8S7FP8DX6Q8R7RGA6CXA3'
+const API_KEY = process.env.API_KEY
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
 
 async function getWeather(city, unit) {
