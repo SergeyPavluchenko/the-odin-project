@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
-    <title>Document</title>
+    <script src="./form.js" defer></script>
+    <title>Sign-up Form</title>
   </head>
+
   <body>
     <div class="container">
       <div class="box">
@@ -19,72 +21,81 @@
           </p>
         </div>
 
-                      <!-- FORM -->
-
+        <!-- FORM -->
 
         <div class="form-side">
+          <div class="form-side-header">
+            <h2>
+              This is not a real online service! You know you need something
+              like this in your life to help you realize your deepest dreams.
+              Sign up <em>now</em> to get started.
+            </h2>
+            <br />
+            <h2>You <em>know</em> you want to</h2>
+          </div>
 
-            <div class="form-side-header">
-                <h2>
-                This is not a real online service! You know you need something
-                like this in your life to help you realize your deepest dreams.
-                Sign up <em>now</em> to get started.
-                </h2>
-                <br />
-                <h2>You <em>know</em> you want to</h2>
-            </div>
+          <div class="form-side-body">
+            <h2>Let's do this</h2>
+            <br />
 
-            <div class="form-side-body">
-                <h2>Let's do this</h2>
-                <br>
-
-
-              <div class="field_group">
-
-                <form class="form-group" action="">
-                    <label for="firstName">FIRST NAME</label>
-                    <input id="firstName" type="text" required name="firstName" />
-                </form>
-
-                <form class="form-group">
-                    <label for="lastName">LAST NAME</label>
-                    <input id="lastName" type="text" name="lastName" />
-                </form>
-
-                <form class="form-group">
-                    <label for="email">EMAIL</label>
-                    <input id="email" type="text" required name="email" />
-                </form>
-
-                <form class="form-group">
-                    <label for="phone">PHONE NUMBER</label>
-                    <input id="phone" type="text" required name="phone" />
-                </form>
-
-                <form class="form-group">
-                    <label for="password">PASSWORD</label>
-                    <input id="password" type="text" required name="password" />
-                </form>
-
-                <form class="form-group">
-                    <label for="confirmPassword">CONFIRM PASSWORD</label>
-                    <input id="confirmPassword" type="text" required name="confirmPassword" />
-                </form>
+            <form class="field_group" id="signup-form" action="#" method="post">
+              <div class="form-group">
+                <label for="firstName">FIRST NAME</label>
+                <input id="firstName" type="text" required name="firstName" />
               </div>
-               
 
-            </div>
+              <div class="form-group">
+                <label for="lastName">LAST NAME</label>
+                <input id="lastName" type="text" required name="lastName" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input id="email" type="email" required name="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">PHONE NUMBER</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  required
+                  name="phone"
+                  pattern="[0-9+\-\s()]{7,}"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input
+                  id="password"
+                  type="password"
+                  required
+                  name="password"
+                  minlength="8"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">CONFIRM PASSWORD</label>
+                <input
+                  id="confirmPassword"
+                  type="password"
+                  required
+                  name="confirmPassword"
+                />
+              </div>
+            </form>
 
             <div class="form-side-footer">
-                <button class="form_btn">Create Account</button>
-                <p>Already have an account? <a href="#">Log in</a></p>
+              <button class="form_btn" type="submit" form="signup-form">
+                Create Account
+              </button>
+              <p>Already have an account? <a href="#">Log in</a></p>
             </div>
-
-        </div>
-
+          </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="./form.js"></script>
 </html>

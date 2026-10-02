@@ -151,10 +151,15 @@ span {
   padding: 12px 24px;
   border-radius: 4px;
   margin-bottom: 40px;
+  cursor: pointer;
 }
 
 .form-side-footer a {
   color: #5e6e52;
   font-weight: bold;
   text-decoration: none;
+}
+
+.form-group input:invalid {
+  border-color: #d55;
 }
