@@ -118,17 +118,12 @@ function loadBooks() {
 }
 
 function Book(title, author, pages, read, id) {
-    (this.title = title),
-        (this.author = author),
-        (this.pages = pages),
-        (this.read = read),
-        (this.id = id);
-
-    this.info = function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read"}`;
-    };
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id = id;
 }
-
 Book.prototype.toggleRead = function () {
     this.read = !this.read;
 };
