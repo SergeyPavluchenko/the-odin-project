@@ -74,7 +74,6 @@ body {
 
 .menu li {
   list-style: none;
-  list-style: none;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -93,7 +92,6 @@ body {
   grid-row: 2;
   background-color: #f5f6f7;
   padding-bottom: 30px;
-  grid-template-columns: 2fr minmax(320px, 1fr);
 }
 
 .header-input-box {
