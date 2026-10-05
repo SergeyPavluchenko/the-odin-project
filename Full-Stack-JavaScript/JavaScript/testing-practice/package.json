@@ -1,13 +1,12 @@
 {
   "name": "testing-practice",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Practice project for learning JavaScript testing with Jest",
   "scripts": {
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Serhii Pavliuchenko",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
