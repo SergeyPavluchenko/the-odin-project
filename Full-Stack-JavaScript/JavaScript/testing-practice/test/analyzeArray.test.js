@@ -1,12 +1,14 @@
-const { analyzeArray } = require('../analyzeArray')
+const { analyzeArray } = require("../analyzeArray");
 
+test("array elements", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
 
-test('array elements', () => {
-
-    expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
-        average: 4,
-        min: 1,
-        max: 8,
-        length: 6
-    })
-})
+test("throws an error for an empty array", () => {
+  expect(() => analyzeArray([])).toThrow("Array must not be empty");
+});
