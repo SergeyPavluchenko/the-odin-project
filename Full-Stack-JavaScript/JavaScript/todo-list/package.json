@@ -1,14 +1,13 @@
 {
   "name": "todo-list",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A todo list application built with JavaScript and Webpack",
   "scripts": {
     "start": "webpack --watch",
     "dev": "webpack serve --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Serhii Pavliuchenko",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^7.1.2",
