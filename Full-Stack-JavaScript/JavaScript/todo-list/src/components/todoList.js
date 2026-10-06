@@ -1,7 +1,25 @@
-function renderTodoList(todos, toggleCompleted, toggleImportant, onDelete) {
+function renderTodoList(todos, toggleCompleted, toggleImportant, onDelete, currentView) {
 
     const list = document.createElement('ul')
     list.classList.add('list')
+
+    if (todos.length === 0) {
+        const emptyMessage = document.createElement('p')
+
+        const messages = {
+            all: 'No tasks yet.',
+            important: 'No important tasks.',
+            completed: 'No completed tasks.',
+            today: 'No tasks for today.',
+        }
+
+        emptyMessage.textContent = messages[currentView]
+        emptyMessage.classList.add('empty-message')
+
+        list.append(emptyMessage)
+
+        return list
+    }
 
     todos.forEach(todo => {
         const item = document.createElement('li')
@@ -40,7 +58,6 @@ function renderTodoList(todos, toggleCompleted, toggleImportant, onDelete) {
         deleteBtn.addEventListener('click', () => {
             onDelete(todo)
         });
-
 
         const title = document.createElement('span')
         title.textContent = todo.title

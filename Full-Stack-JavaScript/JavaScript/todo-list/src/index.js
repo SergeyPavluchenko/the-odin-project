@@ -44,7 +44,8 @@ function renderCurrentView() {
             todos,
             toggleCompleted,
             toggleImportant,
-            onDelete
+            onDelete,
+            currentView
         ))
 }
 
@@ -107,10 +108,6 @@ function onDelete(todo) {
 
 container.append(sidebarBox, formBox, todoBox);
 document.body.append(container);
-
-todoBox.append(
-    renderTodoList(project.todos, toggleCompleted, toggleImportant, onDelete),
-);
 
 renderCurrentView()
 
