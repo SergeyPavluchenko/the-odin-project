@@ -4,9 +4,16 @@
   "description": "A todo list application built with JavaScript and Webpack",
   "scripts": {
     "start": "webpack --watch",
-    "dev": "webpack serve --open"
+    "dev": "webpack serve --open",
+    "build": "webpack"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "webpack",
+    "todo-list",
+    "localstorage",
+    "the-odin-project"
+  ],
   "author": "Serhii Pavliuchenko",
   "license": "ISC",
   "devDependencies": {
