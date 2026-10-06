@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "Practice project for learning JavaScript testing with Jest",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "jest",
+    "testing",
+    "unit-testing",
+    "the-odin-project"
+  ],
   "author": "Serhii Pavliuchenko",
   "license": "ISC",
   "type": "commonjs",
