@@ -4,7 +4,7 @@ A small library application built with JavaScript as part of The Odin Project.
 
 ## Live Demo
 
-👉 https://sergeypavluchenko.github.io/the-odin-project/Full-Stack-JavaScript/JavaScript/Library/
+👉 https://sergeypavluchenko.github.io/the-odin-project/Full-Stack-JavaScript/JavaScript/library/
 
 ## Features
 
