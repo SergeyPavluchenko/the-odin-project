@@ -7,7 +7,14 @@
     "dev": "webpack serve --open",
     "build": "webpack"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "webpack",
+    "weather",
+    "api",
+    "fetch",
+    "the-odin-project"
+  ],
   "author": "Serhii Pavliuchenko",
   "license": "ISC",
   "devDependencies": {

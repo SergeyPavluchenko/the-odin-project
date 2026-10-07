@@ -35,19 +35,27 @@ A weather application built as part of The Odin Project.
 
 Install dependencies:
 
-```bash id="3uw2a7"
+```bash
 npm install
 ```
 
+Create a `.env` file in the project root:
+
+```env
+API_KEY=your_visual_crossing_api_key
+```
+
+Replace `your_visual_crossing_api_key` with your own Visual Crossing API key.
+
 Start the development server:
 
-```bash id="1h1b3v"
+```bash
 npm run dev
 ```
 
 Build the project:
 
-```bash id="e7u4qa"
+```bash
 npm run build
 ```
 

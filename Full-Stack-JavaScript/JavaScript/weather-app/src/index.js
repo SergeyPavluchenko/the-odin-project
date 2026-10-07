@@ -38,12 +38,8 @@ fahrenheitBtn.textContent = "°F";
 fahrenheitBtn.type = "button";
 
 async function searchWeather(city, unit) {
-    try {
-        const weatherData = await getWeather(city, unit);
-        return weatherData;
-    } catch (error) {
-        throw error
-    }
+    const weatherData = await getWeather(city, unit);
+    return weatherData;
 }
 
 function displayWeather(searchData) {
