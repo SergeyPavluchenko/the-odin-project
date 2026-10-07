@@ -4,7 +4,7 @@ A simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript as part of [The O
 
 ## Live Demo
 
-[Play Tic-Tac-Toe](https://sergeypavluchenko.github.io/the-odin-project/Full-Stack-JavaScript/JavaScript/Tic-Tac-Toe/)
+[Play Tic-Tac-Toe](https://sergeypavluchenko.github.io/the-odin-project/Full-Stack-JavaScript/JavaScript/tic-tac-toe/)
 
 ## About
 
@@ -29,7 +29,6 @@ Players take turns placing `X` and `O` on a 3×3 game board. The game automatica
 - HTML5
 - CSS3
 - JavaScript
-- Prettier
 
 ## What I Learned
 
@@ -52,3 +51,33 @@ Clone the repository:
 ```bash
 git clone https://github.com/sergeypavluchenko/the-odin-project.git
 ```
+
+Navigate to the project directory:
+
+```bash
+cd the-odin-project/Full-Stack-JavaScript/JavaScript/tic-tac-toe
+```
+
+Open `index.html` in your browser and start playing.
+
+## Project Structure
+
+```text
+tic-tac-toe/
+├── index.html
+├── script.js
+├── style.css
+└── README.md
+```
+
+## Future Improvements
+
+- Add a single-player mode against the computer
+- Add player name input
+- Add score tracking
+- Improve visual feedback for winning combinations
+- Add animations and sound effects
+
+## Note
+
+This project was created for learning purposes as part of The Odin Project.
