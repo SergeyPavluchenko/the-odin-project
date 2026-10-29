@@ -53,15 +53,15 @@ class LinkedList {
     }
 
     at(idx) {
-        if (idx < 0) {
-            return;
+        if (!Number.isInteger(idx) || idx < 0) {
+            return null;
         }
         let current = this.head;
-        let count = 0;
 
-        while (count < idx && current !== null) {
+
+        for (let i = 0; i < idx && current; i++) {
             current = current.nextNode;
-            count = count + 1;
+
         }
         return current;
     }
