@@ -1,7 +1,6 @@
 const board = document.querySelector(".board");
 const win = document.querySelector(".winner");
 const startBtn = document.querySelector(".startBtn");
-const box = document.querySelector(".box");
 const click = document.querySelector(".click");
 
 let player = "X";
@@ -38,14 +37,12 @@ function createBoard() {
 createBoard();
 
 function handleClick(e) {
-  click.textContent = "";
 
   if (gameOver) {
     return;
   }
 
   if (!e.target.classList.contains("cell")) {
-    click.textContent = "Click on the board!";
     return;
   }
 
@@ -90,19 +87,14 @@ function handleClick(e) {
 }
 
 function handleStart() {
-  const cells = document.querySelectorAll(".cell");
-
-  cells.forEach((cell) => {
-    cell.textContent = "";
-  });
+  createBoard()
 
   player = "X";
   counterX = [];
   counterO = [];
   gameOver = false;
   win.textContent = "";
-  click.textContent = "";
 }
 
-box.addEventListener("click", handleClick);
+board.addEventListener("click", handleClick);
 startBtn.addEventListener("click", handleStart);
