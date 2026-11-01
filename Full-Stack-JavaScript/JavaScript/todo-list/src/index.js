@@ -49,10 +49,12 @@ function renderCurrentView() {
         ))
 }
 
-inputBtn.addEventListener("click", () => {
-    const inputText = titleInput.value;
+formBox.addEventListener("submit", (event) => {
 
-    if (inputText === "") {
+    event.preventDefault()
+    const inputText = titleInput.value.trim();
+
+    if (!inputText) {
         alert("Write a task.");
         return;
     }
@@ -88,14 +90,12 @@ allBtn.addEventListener("click", () => {
 function toggleCompleted(todo) {
     todo.completed = !todo.completed;
     saveProject(project);
-    todoBox.innerHTML = "";
     renderCurrentView()
 }
 
 function toggleImportant(todo) {
     todo.important = !todo.important;
     saveProject(project);
-    todoBox.innerHTML = "";
     renderCurrentView()
 }
 

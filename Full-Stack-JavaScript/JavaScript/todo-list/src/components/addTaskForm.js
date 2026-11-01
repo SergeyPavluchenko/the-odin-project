@@ -1,5 +1,5 @@
 function AddTask() {
-    const formBox = document.createElement('div')
+    const formBox = document.createElement('form')
     formBox.classList.add('formBox')
 
     const inputBox = document.createElement('div')
@@ -15,6 +15,7 @@ function AddTask() {
 
     const inputBtn = document.createElement('button')
     inputBtn.textContent = 'Add task';
+    inputBtn.type = "submit"
 
     formBox.append(titleInput, inputBox)
     inputBox.append(inputBtn, inputDate)
