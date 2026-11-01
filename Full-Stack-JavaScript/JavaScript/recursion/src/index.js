@@ -1,5 +1,5 @@
-import { fibs, fibsRec } from "./fibonacci";
-import mergeSort from "./sort"
+import { fibs, fibsRec } from "./fibonacci.js";
+import mergeSort from "./sort.js"
 
 
 console.log(fibs(8));

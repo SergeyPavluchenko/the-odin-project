@@ -55,14 +55,14 @@ Invalid input causes an error to be thrown.
 
 ## Edge Cases
 
-| Input | Result |
-|---|---|
-| `fibs(0)` | `[]` |
-| `fibs(1)` | `[0]` |
-| `fibs(2)` | `[0, 1]` |
-| `fibs(8)` | `[0, 1, 1, 2, 3, 5, 8, 13]` |
-| `mergeSort([])` | `[]` |
-| `mergeSort([1])` | `[1]` |
+| Input            | Result                      |
+| ---------------- | --------------------------- |
+| `fibs(0)`        | `[]`                        |
+| `fibs(1)`        | `[0]`                       |
+| `fibs(2)`        | `[0, 1]`                    |
+| `fibs(8)`        | `[0, 1, 1, 2, 3, 5, 8, 13]` |
+| `mergeSort([])`  | `[]`                        |
+| `mergeSort([1])` | `[1]`                       |
 
 ## Limitations
 
@@ -85,3 +85,21 @@ JavaScript numbers also have limited integer precision. Fibonacci values beyond 
 - Work with arrays and array methods.
 - Understand the Divide and Conquer approach.
 - Implement the Merge Sort algorithm.
+
+Installation and Usage
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Build the project:
+
+npm run build
+
+Run tests:
+
+npm test
