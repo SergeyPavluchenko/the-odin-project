@@ -12,6 +12,10 @@ header.classList.add("header");
 const main = document.createElement("div");
 main.classList.add("main");
 
+const status = document.createElement("p")
+status.classList.add("status")
+status.setAttribute("aria-live", "polite")
+
 const toggleBox = document.createElement("div");
 toggleBox.classList.add("toggleBox");
 
@@ -40,6 +44,27 @@ fahrenheitBtn.type = "button";
 async function searchWeather(city, unit) {
     const weatherData = await getWeather(city, unit);
     return weatherData;
+}
+
+async function refreshWeather(unit) {
+    if (!currentCity) {
+        return
+    }
+    status.textContent = "Loading..."
+    try {
+        const sarchData = await searchWeather(currentCity, unit)
+
+        currentUnit = unit
+        displayWeather(searchData)
+
+        celsiusBtn.classList.toggle("active", unit === "metric")
+        fahrenheitBtn.classList.toggle("active", unit === "us")
+
+        status.textContent = "";
+
+    } catch (error) {
+        status.textContent = "Unable to update weather. Please try again.";
+    }
 }
 
 function displayWeather(searchData) {
@@ -101,61 +126,45 @@ function displayWeather(searchData) {
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    if (input.value === "") {
-        return;
+    const city = input.value.trim()
+
+    if (!city) {
+        status.textContent = "Please enter a city name";
+        return
     }
 
     main.textContent = "Loading...";
 
     try {
-        const searchData = await searchWeather(input.value, currentUnit);
+        const searchData = await searchWeather(city, currentUnit);
 
         if (!searchData) {
             main.textContent = "City not found";
             return;
         }
 
-        currentCity = input.value;
+        currentCity = city;
 
         displayWeather(searchData);
 
-        input.value = "";
+        city = "";
+        status.textContent = ""
 
     } catch (error) {
-        main.textContent = 'Unable to load weather data. Please try again.'
+        status.textContent = 'Unable to load weather data. Please try again.'
     }
 
 });
 
 celsiusBtn.addEventListener("click", async () => {
-    if (!currentCity) return;
-    currentUnit = "metric";
-
-    celsiusBtn.classList.add('active')
-    fahrenheitBtn.classList.remove('active')
-
-    const searchData = await searchWeather(currentCity, currentUnit);
-    if (!searchData) {
-        return;
-    }
-    displayWeather(searchData);
+    refreshWeather("metric")
 });
 
 fahrenheitBtn.addEventListener("click", async () => {
-    if (!currentCity) return;
-    currentUnit = "us";
-
-    fahrenheitBtn.classList.add('active')
-    celsiusBtn.classList.remove('active')
-
-    const searchData = await searchWeather(currentCity, currentUnit);
-    if (!searchData) {
-        return;
-    }
-    displayWeather(searchData);
+    refreshWeather("us")
 });
 
 toggleBox.append(celsiusBtn, fahrenheitBtn);
 form.append(input, buttonSearch);
 header.append(form, toggleBox);
-content.append(title, header, main);
+content.append(title, header, main, status);

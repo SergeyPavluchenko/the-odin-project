@@ -61,7 +61,7 @@ npm run build
 
 ## Future Improvements
 
-- Add a loading state
+- Loading and error states for unit switching
 - Add better error messages
 - Add a multi-day forecast
 - Improve mobile layout

@@ -1,7 +1,6 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import Dotenv from "dotenv-webpack";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +20,6 @@ export default {
         new HtmlWebpackPlugin({
             template: "./index.html",
         }),
-        new Dotenv(),
     ],
 
     module: {
@@ -39,5 +37,11 @@ export default {
         },
         port: 8080,
         open: true,
+        proxy: [
+            {
+                context: ["/api"],
+                target: "http://localhost:3000",
+            },
+        ],
     },
 };
