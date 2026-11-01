@@ -1,4 +1,16 @@
+function validateInput(n) {
+    if (typeof n !== "number") {
+        throw new TypeError("n must be a number");
+    }
+
+    if (!Number.isSafeInteger(n) || n < 0) {
+        throw new RangeError("n must be a non-negative safe integer");
+
+    }
+}
+
 export function fibs(n) {
+    validateInput(n);
     const result = []
     for (let i = 0; i < n; i++) {
         if (i === 0) {
@@ -13,6 +25,7 @@ export function fibs(n) {
 }
 
 export function fibsRec(n) {
+    validateInput(n);
 
     const result = []
 

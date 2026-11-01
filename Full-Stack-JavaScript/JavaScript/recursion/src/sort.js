@@ -9,11 +9,11 @@ function mergeSort(arr) {
     const left = arr.slice(0, middle)
     const right = arr.slice(middle)
 
-    const margeLeft = mergeSort(left)
-    const margeRight = mergeSort(right)
-    return marge(margeLeft, margeRight)
+    const mergedLeft = mergeSort(left)
+    const mergedRight = mergeSort(right)
+    return merge(mergedLeft, mergedRight)
 
-    function marge(left, right) {
+    function merge(left, right) {
         const result = []
         let i = 0
         let j = 0
