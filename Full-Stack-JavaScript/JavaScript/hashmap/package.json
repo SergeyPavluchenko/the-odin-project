@@ -1,0 +1,18 @@
+{
+  "name": "hashmap",
+  "version": "1.0.0",
+  "description": "HashMap implementation - The Odin Project",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "javascript",
+    "hashmap",
+    "data-structures",
+    "the-odin-project"
+  ],
+  "author": "Sergey Pavluchenko",
+  "license": "ISC"
+}
