@@ -1,99 +1,202 @@
+class Node {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+        this.next = null;
+    }
+}
+
 class HashMap {
     constructor() {
-        this.copacity = 16;
+        this.capacity = 16;
         this.loadFactor = 0.75;
-        this.buckets = new Array(this.copacity);
+        this.buckets = new Array(this.capacity);
     }
 
     hash(key) {
         let hashCode = 0;
+        const primeNumber = 31;
 
         for (let index = 0; index < key.length; index++) {
-            hashCode += key.charCodeAt(index);
+            hashCode =
+                (primeNumber * hashCode + key.charCodeAt(index)) % this.capacity;
         }
-        return hashCode % this.copacity;
+        return hashCode;
     }
 
     set(key, value) {
         const index = this.hash(key);
 
-        this.buckets[index] = [key, value];
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+
+        if (this.buckets[index] === undefined) {
+            this.buckets[index] = new Node(key, value);
+
+            if (this.length() > this.capacity * this.loadFactor) {
+                this.resize();
+            }
+
+            return;
+        }
+
+        let current = this.buckets[index];
+
+        while (current !== null) {
+            if (current.key === key) {
+                current.value = value;
+                return;
+            }
+
+            if (current.next === null) {
+                current.next = new Node(key, value);
+
+                if (this.length() > this.capacity * this.loadFactor) {
+                    this.resize();
+                }
+                return;
+            }
+            current = current.next;
+        }
     }
 
     get(key) {
         const index = this.hash(key);
 
-        return this.buckets[index][1];
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+
+        let current = this.buckets[index];
+
+        while (current !== null && current !== undefined) {
+            if (current.key === key) {
+                return current.value;
+            }
+            current = current.next;
+        }
+
+        return undefined;
     }
 
     has(key) {
         const index = this.hash(key);
 
-        return this.buckets[index] !== undefined;
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+
+        let current = this.buckets[index];
+
+        while (current !== null && current !== undefined) {
+            if (current.key === key) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
     }
 
     remove(key) {
         const index = this.hash(key);
 
-        if (this.buckets[index] === undefined) {
-            return false;
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
         }
 
-        if (this.buckets[index][0] !== key) {
-            return false;
+        let current = this.buckets[index];
+        let previous = null;
+
+        while (current !== null && current !== undefined) {
+            if (current.key === key) {
+                if (previous === null) {
+                    this.buckets[index] = current.next;
+                } else {
+                    previous.next = current.next;
+                }
+                return true;
+            }
+            previous = current;
+            current = current.next;
         }
-
-        this.buckets[index] = undefined;
-
-        return true;
+        return false;
     }
 
     length() {
-        let count = 0
+        let count = 0;
 
         for (let i = 0; i < this.buckets.length; i++) {
-            if (this.buckets[i] !== undefined) {
-                count++
+            let current = this.buckets[i];
+
+            while (current !== null && current !== undefined) {
+                count++;
+                current = current.next;
             }
         }
-        return count
+        return count;
     }
 
     clear() {
-        this.buckets = new Array(this.copacity);
+        this.buckets = new Array(this.capacity);
     }
 
     keys() {
-        const keysArray = []
+        const keysArray = [];
 
         for (let i = 0; i < this.buckets.length; i++) {
-            if (this.buckets[i] !== undefined) {
-                keysArray.push(this.buckets[i][0])
+            let current = this.buckets[i];
+
+            while (current !== null && current !== undefined) {
+                keysArray.push(current.key);
+                current = current.next;
             }
         }
-        return keysArray
+        return keysArray;
     }
 
     values() {
-        const valuesArray = []
+        const valuesArray = [];
 
         for (let i = 0; i < this.buckets.length; i++) {
-            if (this.buckets[i] !== undefined) {
-                valuesArray.push(this.buckets[i][1])
+            let current = this.buckets[i];
+
+            while (current !== null && current !== undefined) {
+                valuesArray.push(current.value);
+                current = current.next;
             }
         }
-        return valuesArray
+        return valuesArray;
     }
 
     entries() {
-        const entriesArray = []
+        const entriesArray = [];
 
         for (let i = 0; i < this.buckets.length; i++) {
-            if (this.buckets[i] !== undefined) {
-                entriesArray.push(this.buckets[i])
+            let current = this.buckets[i];
+
+            while (current !== null && current !== undefined) {
+                entriesArray.push([current.key, current.value]);
+                current = current.next;
             }
         }
-        return entriesArray
+        return entriesArray;
+    }
+
+    resize() {
+        this.capacity *= 2;
+
+        const oldBuckets = this.buckets;
+        this.buckets = new Array(this.capacity);
+
+        for (let i = 0; i < oldBuckets.length; i++) {
+            let current = oldBuckets[i];
+
+            while (current !== null && current !== undefined) {
+                this.set(current.key, current.value);
+                current = current.next;
+            }
+        }
     }
 }
 

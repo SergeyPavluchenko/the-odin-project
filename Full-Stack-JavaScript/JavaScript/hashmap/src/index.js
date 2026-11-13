@@ -1,15 +1,5 @@
 import HashMap from "./hashMap.js";
 
-const test = new HashMap();
-
-class Node {
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
-        this.next = null;
-    }
-}
-
 class LinkedList {
     constructor() {
         this.head = null;
@@ -146,7 +136,7 @@ class LinkedList {
         }
 
         const newNode = new Node(key, value);
-        let current = this.head
+        let current = this.head;
 
         for (let i = 0; i < index - 1; i++) {
             current = current.next;
@@ -158,30 +148,31 @@ class LinkedList {
 
     removeAt(index) {
         if (index === 0) {
-            this.head = this.head.next
-            return
+            this.head = this.head.next;
+            return;
         }
 
         if (index < 0 || index > this.size()) {
-            return
+            return;
         }
 
-        let current = this.head
+        let current = this.head;
 
         for (let i = 0; i < index - 1; i++) {
-            current = current.next
+            current = current.next;
         }
-        current.next = current.next.next
+        current.next = current.next.next;
     }
 }
 
-const list = new LinkedList();
 
-list.append("Cat", "Кіт");
-list.append("Dog", "Пес");
-list.append("Fox", "Лис");
+const map = new HashMap();
 
-list.removeAt(1);
+map.set("name", "Serhii");
+map.set("language", "JavaScript");
+map.set("project", "HashMap");
 
-console.log(list.toString());
-console.log(list.size());
+console.log("Ключі:", map.keys());
+console.log("Значення:", map.values());
+console.log("Усі записи:", map.entries());
+console.log("Кількість елементів:", map.length());
