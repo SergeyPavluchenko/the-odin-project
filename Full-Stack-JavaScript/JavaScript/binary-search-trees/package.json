@@ -1,0 +1,13 @@
+{
+  "name": "binary-search-trees",
+  "version": "1.0.0",
+  "description": "Binary Search Trees implementation - The Odin Project",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
