@@ -53,6 +53,25 @@ class Tree {
 
     }
 
+    includes(value) {
+        let current = this.root
+
+        if (current === null) {
+            return false
+        }
+
+        while (current !== null) {
+            if (current.data === value) {
+                return true
+            } else if (current.data < value) {
+                current = current.right
+            } else if (current.data > value) {
+                current = current.left
+            }
+        }
+        return false
+    }
+
 }
 
 
