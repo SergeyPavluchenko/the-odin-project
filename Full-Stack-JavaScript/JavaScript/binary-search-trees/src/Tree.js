@@ -125,7 +125,7 @@ class Tree {
         }
     }
 
-    levelOrder(callback) {
+    levelOrderForEach(callback) {
         const queue = [this.root]
         const result = []
 
@@ -151,7 +151,7 @@ class Tree {
         return result
     }
 
-    inOrder(callback) {
+    inOrderForEach(callback) {
         const result = []
 
         function visit(node) {
@@ -173,7 +173,7 @@ class Tree {
 
     }
 
-    preOrder(callback) {
+    preOrderForEach(callback) {
         const result = []
         function visit(node) {
 
@@ -192,7 +192,7 @@ class Tree {
         return result
     }
 
-    postOrder(callback) {
+    postOrderForEach(callback) {
         const result = []
         function visit(node) {
 
@@ -209,6 +209,33 @@ class Tree {
         }
         visit(this.root)
         return result
+    }
+
+    height(node) {
+
+        if (node === null) {
+            return -1
+        }
+        const leftHeight = this.height(node.left)
+        const rightHeight = this.height(node.right)
+        return 1 + Math.max(leftHeight, rightHeight)
+    }
+
+    depth(node) {
+        let current = this.root
+        let depth = 0
+
+        while (current !== null) {
+            if (current === node) {
+                return depth
+            }
+            if (node.data < current.data) {
+                current = current.left
+            } else { current = current.right }
+
+            depth++
+        }
+        return null
     }
 }
 
