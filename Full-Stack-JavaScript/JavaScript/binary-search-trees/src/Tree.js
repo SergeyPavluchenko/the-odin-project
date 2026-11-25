@@ -237,6 +237,31 @@ class Tree {
         }
         return null
     }
+
+    isBalanced(node) {
+        const check = (node) => {
+            if (node === null) {
+                return true
+            }
+
+            const leftHeight = this.height(node.left);
+            const rightHeight = this.height(node.right);
+
+            if (Math.abs(leftHeight - rightHeight) > 1) {
+                return false
+            }
+            return check(node.left) && check(node.right)
+        }
+        return check(this.root)
+    }
+
+    rebalance() {
+        const array = []
+        this.inOrderForEach((node) => {
+            array.push(node.data)
+        })
+        this.root = this.buildTree(array)
+    }
 }
 
 
